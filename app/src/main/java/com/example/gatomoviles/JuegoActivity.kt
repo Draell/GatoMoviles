@@ -20,7 +20,7 @@ class JuegoActivity : AppCompatActivity(){
     private lateinit var siete: TextView
     private lateinit var ocho: TextView
     private lateinit var nueve: TextView
-    private lateinit var btnNuevo: Button
+    private lateinit var btnNuevoJuego: Button
     private lateinit var puntos1: TextView
     private lateinit var puntos2: TextView
 
@@ -39,7 +39,7 @@ class JuegoActivity : AppCompatActivity(){
         siete = findViewById(R.id.siete)
         ocho = findViewById(R.id.ocho)
         nueve = findViewById(R.id.nueve)
-        btnNuevo = findViewById(R.id.btnNuevo)
+        btnNuevoJuego = findViewById(R.id.btnNuevo)
         puntos1 = findViewById(R.id.puntos_j1)
         puntos2 = findViewById(R.id.puntos_j2)
 
@@ -53,8 +53,8 @@ class JuegoActivity : AppCompatActivity(){
         ocho.setOnClickListener { onBoxClicked(ocho, posicion(2, 1)) }
         nueve.setOnClickListener { onBoxClicked(nueve, posicion(2, 2)) }
 
-        btnNuevo.setOnClickListener {
-            btnNuevo.visibility = View.GONE
+        btnNuevoJuego.setOnClickListener {
+            btnNuevoJuego.visibility = View.GONE
             gameManager.reset()
             resetboxes()
         }
@@ -105,7 +105,7 @@ class JuegoActivity : AppCompatActivity(){
             if (lineaGanar != null) {
                 updatePoints()
                 disableBoxes()
-                btnNuevo.visibility = View.VISIBLE
+                btnNuevoJuego.visibility = View.VISIBLE
                 showWinner(lineaGanar)
             }
         }
@@ -140,7 +140,7 @@ class JuegoActivity : AppCompatActivity(){
         }
 
         winningBoxes.forEach { box ->
-            box.background = ContextCompat.getDrawable(GameActivity@ this, background)
+            box.background = ContextCompat.getDrawable(JuegoActivity@ this, background)
 
 
         }

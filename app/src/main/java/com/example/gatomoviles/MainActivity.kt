@@ -7,15 +7,15 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
-lateinit var btnNuevo: Button
+lateinit var btnNuevoJuego: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnNuevo = findViewById(R.id.btn_Nuevo_Juego)
-        btnNuevo.setOnClickListener{
-            val intent = Intent(this, JuegoActivity::class.java)
+        btnNuevoJuego = findViewById(R.id.btn_Nuevo_Juego)
+        btnNuevoJuego.setOnClickListener{
+            val intent = Intent(MainActivity@this, JuegoActivity::class.java)
             startActivity(intent)
         }
 
